@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 028885506dd210270c6c8b6b52c75d42f24d12a11bd031b8ecc0e04600d0bd24
+  sha256: 26073a4556ae1542b9c3040b1f599807e760e7b664ee28d0e0a1a678330b0270
 
 build:
   noarch: python
@@ -23,6 +23,7 @@ requirements:
     - python >=3.8
     - openjdk >=11
     - ConfigArgParse
+    - geopandas
     - joblib
     - jpype1
     - numpy
@@ -41,7 +42,7 @@ about:
     R5py is a Python wrapper for the R5 routing analysis engine. It’s inspired by r5r, a wrapper for R, and is designed to interact with GeoPandas data frames.
     Similar to r5r, r5py represents a simple way to run R5 locally. It allows users to generate detailed routing analyses or calculate 
     travel time matrices using parallel computing, and integrates seamlessly with Python/Geopandas workflows.
-  license: GPLv3 or later, MIT
+  license: GPL-3.0-or-later OR MIT
   license_file:
     - LICENSE
     - licenses/
