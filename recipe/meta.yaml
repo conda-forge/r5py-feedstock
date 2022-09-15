@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - python >=3.8
-    - openjdk >=11
+    - openjdk >=11,<12
     - pip
   run:
     - python >=3.8
