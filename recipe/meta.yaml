@@ -12,16 +12,15 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python >=3.8
-    - openjdk >=11
+    - openjdk >=11,<12
     - pip
   run:
     - python >=3.8
-    - openjdk >=11
     - ConfigArgParse
     - geopandas
     - joblib
@@ -32,6 +31,8 @@ requirements:
     - requests
 
 test:
+  requires:
+    - openjdk >=11,<12
   imports:
     - r5py
 
