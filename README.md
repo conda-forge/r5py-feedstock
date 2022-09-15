@@ -3,7 +3,7 @@ About r5py
 
 Home: https://github.com/r5py/r5py
 
-Package license: GPLv3 or later, MIT
+Package license: GPL-3.0-or-later OR MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r5py-feedstock/blob/main/LICENSE.txt)
 
