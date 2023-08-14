@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "0.0.4" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -17,22 +17,27 @@ build:
 requirements:
   host:
     - python >=3.8
-    - openjdk >=11,<12
+    - openjdk >=11
     - pip
   run:
     - python >=3.8
     - ConfigArgParse
+    - filelock
+    - fiona
     - geopandas
+    - importlib_resources",
     - joblib
     - jpype1
     - numpy
     - pandas
     - psutil
+    - pyproj
     - requests
+    - shapely >=2.0
 
 test:
   requires:
-    - openjdk >=11,<12
+    - openjdk >=11
   imports:
     - r5py
 
