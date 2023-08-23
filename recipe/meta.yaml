@@ -25,7 +25,7 @@ requirements:
     - filelock
     - fiona
     - geopandas
-    - importlib_resources",
+    - importlib_resources
     - joblib
     - jpype1
     - numpy
