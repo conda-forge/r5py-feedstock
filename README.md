@@ -1,11 +1,11 @@
-About r5py
-==========
+About r5py-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r5py-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/r5py/r5py
 
 Package license: GPL-3.0-or-later OR MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r5py-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python wrapper for the R5 routing analysis engine
 
