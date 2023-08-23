@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "0.0.4" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,32 +7,37 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 26073a4556ae1542b9c3040b1f599807e760e7b664ee28d0e0a1a678330b0270
+  sha256: e9b61e92b31efbf0c963db95e75cd0c9df936310a9f77cc8520c7a7ba39ca2d9
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python >=3.8
-    - openjdk >=11,<12
+    - openjdk >=11
     - pip
   run:
     - python >=3.8
     - ConfigArgParse
+    - filelock
+    - fiona
     - geopandas
+    - importlib_resources
     - joblib
     - jpype1
     - numpy
     - pandas
     - psutil
+    - pyproj
     - requests
+    - shapely >=2.0
 
 test:
   requires:
-    - openjdk >=11,<12
+    - openjdk >=11
   imports:
     - r5py
 
