@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1.dev0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9b61e92b31efbf0c963db95e75cd0c9df936310a9f77cc8520c7a7ba39ca2d9
+  sha256: 5c219909ec683bf6fb39df5e58dc790064fb4ef8022cb92f640a62c36fb58bde
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
