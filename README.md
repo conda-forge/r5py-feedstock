@@ -13,9 +13,12 @@ Development: https://github.com/r5py/r5py
 
 Documentation: https://r5py.readthedocs.io/
 
-R5py is a Python wrapper for the R5 routing analysis engine. It’s inspired by r5r, a wrapper for R, and is designed to interact with GeoPandas data frames.
-Similar to r5r, r5py represents a simple way to run R5 locally. It allows users to generate detailed routing analyses or calculate
-travel time matrices using parallel computing, and integrates seamlessly with Python/Geopandas workflows.
+R5py is a Python wrapper for the R5 routing analysis engine. It’s inspired
+by r5r, a wrapper for R, and is designed to interact with GeoPandas data
+frames.  Similar to r5r, r5py represents a simple way to run R5 locally. It
+allows users to generate detailed routing analyses or calculate travel time
+matrices using parallel computing, and integrates seamlessly with
+Python/Geopandas workflows.
 
 
 Current build status
