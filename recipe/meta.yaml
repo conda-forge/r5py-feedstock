@@ -7,13 +7,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f28ef56beb0a9abc3e0440f38ce21a3a7c804a2caed1425a9e159a717d8c7973
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -46,6 +46,7 @@ test:
     - python {{ python_min }}
     - openjdk >=21
     - r5py
+    - python {{ python_min }}
 
 about:
   home: https://github.com/r5py/r5py
