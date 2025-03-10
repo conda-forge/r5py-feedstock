@@ -19,6 +19,7 @@ requirements:
     - python {{ python_min }}
     - openjdk >=11
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - openjdk >=11
