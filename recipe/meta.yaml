@@ -38,7 +38,7 @@ requirements:
     - scikit-learn
     - shapely >=2.0
     - simplification
-    - typing_extensions  # [py<3.13]
+    - typing_extensions
 
 test:
   imports:
