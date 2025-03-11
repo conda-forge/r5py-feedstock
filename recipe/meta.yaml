@@ -1,5 +1,6 @@
 {% set name = "r5py" %}
-{% set version = "0.1.2" %}
+{% set version = "1.0.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dee8e048b075b7156097b51ad2bfd6bf6339585652c43eba64f9b46119a3b43b
+  sha256: f28ef56beb0a9abc3e0440f38ce21a3a7c804a2caed1425a9e159a717d8c7973
 
 build:
   noarch: python
@@ -17,17 +18,16 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - openjdk >=11
+    - openjdk >=21
     - pip
     - setuptools
   run:
     - python >={{ python_min }}
-    - openjdk >=11
+    - openjdk >=21
     - ConfigArgParse
     - filelock
-    - fiona
+    - geohexgrid
     - geopandas
-    - importlib_resources
     - joblib
     - jpype1
     - numpy
@@ -35,13 +35,17 @@ requirements:
     - psutil
     - pyproj
     - requests
+    - scikit-learn
     - shapely >=2.0
+    - simplification
+    - typing_extensions
 
 test:
   imports:
     - r5py
   requires:
-    - openjdk >=11
+    - python {{ python_min }}
+    - openjdk >=21
     - r5py
     - python {{ python_min }}
 
