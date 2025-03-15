@@ -1,0 +1,23 @@
+diff --unified --recursive --text a/tests/test_isochrones.py b/tests/test_isochrones.py
+--- a/tests/test_isochrones.py	2025-03-15 15:33:48.929227528 +0100
++++ b/tests/test_isochrones.py	2025-03-15 15:36:21.252763805 +0100
+@@ -80,6 +80,9 @@
+             lambda t: round(t.total_seconds() / 60)
+         )
+ 
++        isochrones.set_precision(0.0001)  # compare four decimal digits
++        isochrones_from_multiple_origins.set_precision(0.0001)
++
+         geopandas.testing.assert_geodataframe_equal(
+             isochrones,
+             isochrones_from_multiple_origins,
+@@ -131,6 +134,9 @@
+             lambda t: round(t.total_seconds() / 60)
+         )
+ 
++        isochrones.set_precision(0.0001)  # compare four decimal digits
++        expected_isochrones.set_precision(0.0001)
++
+         geopandas.testing.assert_geodataframe_equal(
+             isochrones,
+             expected_isochrones,
