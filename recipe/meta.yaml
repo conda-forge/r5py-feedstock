@@ -9,6 +9,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fd8f92084756925bc2f6241a81247dc9efb14278224aa0cfa84c140345d1571c
+  patches:
+    - precision-of-comparison.patch
 
 build:
   noarch: python
@@ -53,7 +55,7 @@ test:
     - tests
   commands:
     - pip check
-    - python -m pytest || echo "WARNING: not all tests passed successfully."
+    - python -m pytest
   downstreams:
     - r5py.sampledata.helsinki
     - r5py.sampledata.sao_paulo
