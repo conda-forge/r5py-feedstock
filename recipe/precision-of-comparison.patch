@@ -5,8 +5,8 @@ diff --unified --recursive --text a/tests/test_isochrones.py b/tests/test_isochr
              lambda t: round(t.total_seconds() / 60)
          )
  
-+        isochrones.["geometry"].set_precision(0.001)  # compare four decimal digits
-+        isochrones_from_multiple_origins.["geometry"].set_precision(0.001)
++        isochrones.["geometry"] = isochrones.["geometry"].set_precision(0.001)  # compare four decimal digits
++        isochrones_from_multiple_origins["geometry"] = isochrones_from_multiple_origins["geometry"].set_precision(0.001)
 +
          geopandas.testing.assert_geodataframe_equal(
              isochrones,
@@ -15,8 +15,8 @@ diff --unified --recursive --text a/tests/test_isochrones.py b/tests/test_isochr
              lambda t: round(t.total_seconds() / 60)
          )
  
-+        isochrones.["geometry"].set_precision(0.001)  # compare four decimal digits
-+        expected_isochrones.["geometry"].set_precision(0.001)
++        isochrones["geometry"] = isochrones["geometry"].set_precision(0.001)  # compare four decimal digits
++        expected_isochrones["geometry"] = expected_isochrones["geometry"].set_precision(0.001)
 +
          geopandas.testing.assert_geodataframe_equal(
              isochrones,
