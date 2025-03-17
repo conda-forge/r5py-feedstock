@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,17 +8,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3f05d2fb52e10257e16ae065ccbff5f15910eda730c56819d7311795efe64afe
+  sha256: fd8f92084756925bc2f6241a81247dc9efb14278224aa0cfa84c140345d1571c
+  patches:
+    - precision-of-comparison.patch
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script: python -m pip install . -vv
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - openjdk >=21
     - pip
     - setuptools
   run:
@@ -38,16 +39,26 @@ requirements:
     - scikit-learn
     - shapely >=2.0
     - simplification
-    - typing_extensions
+    - typing-extensions
 
 test:
-  imports:
-    - r5py
   requires:
     - python {{ python_min }}
-    - openjdk >=21
-    - r5py
-    - python {{ python_min }}
+    - pip
+    - pyarrow
+    - pytest
+    - pytest-cov
+    - pytest-lazy-fixtures
+    - r5py.sampledata.helsinki
+    - r5py.sampledata.sao_paulo
+  source_files:
+    - tests
+  commands:
+    - pip check
+    - python -m pytest
+  downstreams:
+    - r5py.sampledata.helsinki
+    - r5py.sampledata.sao_paulo
 
 about:
   home: https://github.com/r5py/r5py
