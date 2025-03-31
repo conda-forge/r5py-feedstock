@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,9 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fd8f92084756925bc2f6241a81247dc9efb14278224aa0cfa84c140345d1571c
-  patches:
-    - precision-of-comparison.patch
+  sha256: b079e1e8369ce16c1df57783dd01c9f809e246d2311ef0796f51b05433677521
 
 build:
   noarch: python
