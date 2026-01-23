@@ -1,5 +1,5 @@
 {% set name = "r5py" %}
-{% set version = "1.0.7" %}
+{% set version = "1.1.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,9 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6b7202faa7667c4c2df8f6723f725e7ff8a8af327d4eadd93e655a2eaf01064e
-  patches:
-    - precision-of-comparison.patch
+  sha256: 482e2109ba4ab9d35aa036e558a8fbd6b31232c42a395688e5a75072733f4c35
 
 build:
   noarch: python
@@ -28,17 +26,17 @@ requirements:
     - ConfigArgParse
     - filelock
     - geohexgrid
-    - geopandas <1.1.0
+    - geopandas
     - joblib
     - jpype1
     - numpy
-    - pandas >=2.1.0
+    - pandas
     - psutil
     - pyproj
     - rasterio
     - requests
     - scikit-learn
-    - shapely >=2.0
+    - shapely
     - simplification
     - typing-extensions
 
