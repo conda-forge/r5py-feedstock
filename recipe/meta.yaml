@@ -9,8 +9,6 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 482e2109ba4ab9d35aa036e558a8fbd6b31232c42a395688e5a75072733f4c35
-  #patches:
-  #  - precision-of-comparison.patch
 
 build:
   noarch: python
